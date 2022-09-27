@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.awt.*;
 
 public class MovingDot extends Dot implements Runnable{
@@ -54,6 +53,7 @@ public class MovingDot extends Dot implements Runnable{
     public void run() {
         while (true) {
             move();
+            //System.out.println(this.speed + " " + this.direction);
             try {
                 Thread.sleep(5);
             } catch (InterruptedException e) {
