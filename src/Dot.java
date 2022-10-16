@@ -1,16 +1,16 @@
 import java.awt.*;
 
-public class Dot {
+public class Dot extends Shape{
 	protected int radius;
 	protected Color color;
 	protected double x;
 	protected double y;
 
-	public Dot(Point center) {
+	public Dot(Point center, Color color) {
 		this.x = center.x;
 		this.y = center.y;
 		radius = 5;
-		color = Color.BLUE;
+		this.color = color;
 	}
 
 	public Point getCenter() {
@@ -39,7 +39,8 @@ public class Dot {
 		return  new Rectangle(getTop(),getLeft(), 2*radius, 2 *radius);
 	}
 
-	void paint(Graphics g){
+	@Override
+	public void paint(Graphics g){
 		g.setColor(color);
 		g.fillOval(getLeft(), getTop(), radius*2, radius*2 );
 	}
